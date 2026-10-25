@@ -39,7 +39,8 @@ const LAYERS = {
   "cambridge-other": "Other, Cambridge 剑桥其他",
   "cambridgeshire":  "Cambridgeshire"
 };
-const map = L.map('map', { zoomControl:true }).setView([52.2053, 0.1218], 15);
+const map = L.map('map', { zoomControl:false }).setView([52.2053, 0.1218], 15);
+L.control.zoom({ position:'topright' }).addTo(map);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
