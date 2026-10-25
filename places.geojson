@@ -1,0 +1,22 @@
+---
+layout: null
+---
+{
+  "type": "FeatureCollection",
+  "features": [
+{% assign items = site.cases | where_exp: "c", "c.status != 'excluded'" | sort: "code" %}{% for c in items %}    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [{{ c.lon }}, {{ c.lat }}]},
+      "properties": {
+        "code": {{ c.code | jsonify }},
+        "name_en": {{ c.name_en | jsonify }},
+        "name_zh": {{ c.name_zh | jsonify }},
+        "layer": {{ c.layer | jsonify }},
+        "status": {{ c.status | jsonify }},
+        "tier": {{ c.tier | jsonify }},
+        "tags": {{ c.tags | jsonify }},
+        "cargo_url": {{ c.cargo_url | jsonify }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+{% endfor %}  ]
+}
