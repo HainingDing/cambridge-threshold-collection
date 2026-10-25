@@ -11,7 +11,7 @@ lon: 0.1165
 coord_source: "Wikipedia (temporary; to be replaced by OSM)"
 osm: ""
 chapel_page: "https://www.kings.cam.ac.uk/chapel"
-cargo_url: ""
+cargo_url: "https://373067.cargo.site/c01-king%27s-college-chapel"
 dimensions: "289 × 76½ ft (88.1 × 23.3 m) incl. ante-chapel; vault 80 ft (24.4 m); 12 bays"
 sequences:
   - id: central
