@@ -7,7 +7,7 @@ status: shortlist
 tier: A
 tags: [college-chapel, shortlist, screen, side-route]
 college: King's College
-date: "1446–1515; screen 1533–36"
+built: "1446–1515; screen 1533–36"
 lat: 52.2048
 lon: 0.1165
 coord_source: "Wikipedia (temporary; to be replaced by OSM)"
