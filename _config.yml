@@ -1,0 +1,7 @@
+title: Cambridge Threshold Collection
+description: A collection of transitional spaces in religious buildings, starting from the chapels of the Cambridge colleges.
+collections:
+  cases:
+    output: false
+exclude:
+  - README.md
