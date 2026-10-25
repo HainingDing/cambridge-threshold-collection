@@ -69,6 +69,7 @@ A collection of good transitional spaces（threshold sequences）in religious bu
 
 - 坐标用 OpenStreetMap（`osm` 填 OSM 对象，如 `way/123456`）；暂用其他来源时，在 `coord_source` 里写明。
 - 尺寸写原文单位，同时给出米（1 ft = 0.3048 m）。
+- 建造年代写在 `built`。**不要用 `date` 这个字段名**：GitHub Pages 会把它当成发布日期，写成年代范围会导致网站构建失败。
 - **不写个人邮箱**：仓库是公开的，联系方式只放学院官网链接。
 
 ## 9. 图和来源
@@ -88,3 +89,4 @@ A collection of good transitional spaces（threshold sequences）in religious bu
 ## 修改记录
 
 - 2026-10-25：第一版。
+- 2026-10-25：年代字段由 `date` 改为 `built`。
