@@ -1,92 +1,86 @@
-# Rules · 规则
+# Rules
 
-这份文件规定 collection 收什么、怎么记录、怎么增删。网站（Cargo 页面和地图）都以 `_cases/` 里的 md 文件为准。
+How entries in this collection are chosen, recorded, added and removed. The website (the Cargo pages and the map) is built from the files in `_cases/`.
 
-## 1. 这个 collection 是什么
+## 1. What the collection is
 
-A collection of good transitional spaces（threshold sequences）in religious buildings, starting from the chapels of the Cambridge colleges.
-目的：从好的过渡空间里，读出对比强度（Δ between consecutive segments）和对比持续时间（length of the preceding enclosed segment）。
+A collection of transitional spaces (threshold sequences) in religious buildings, starting with the chapels of the Cambridge colleges. Each entry records the sequence of spaces a visitor passes through and how one space changes into the next.
 
-## 2. 范围（分层，先做第 1 层）
+## 2. Scope
 
-| layer | 范围 | 状态 |
-|---|---|---|
-| `college-chapel` | 剑桥 31 个学院中有礼拜堂的 23 个 | 进行中 |
-| `cambridge-other` | 剑桥市内其他宗教建筑：大学教堂、神学院礼拜堂、Leper Chapel、Cambridge Central Mosque 等 | 待做 |
-| `cambridgeshire` | Cambridgeshire 的宗教建筑，如 Ely | 待做 |
+| layer | scope |
+|---|---|
+| `college-chapel` | Chapels of the Cambridge colleges (23 of the 31 colleges have one) |
+| `cambridge-other` | Other religious buildings in Cambridge, e.g. Great St Mary's, theological college chapels, the Leper Chapel, Cambridge Central Mosque |
+| `cambridgeshire` | Religious buildings elsewhere in Cambridgeshire, e.g. Ely Cathedral |
 
-## 3. 筛选流程（第 2、3 层使用）
+## 3. Inclusion criteria
 
-1. **检索范围**：OpenStreetMap 中 `amenity=place_of_worship` 的全部条目（按层的行政边界）。
-2. **自动筛选**：按 Historic England 登录等级、建成年代等可自动判断的条件。
-3. **人工筛选**：按第 4 节的标准逐条判断，排除的条目记下理由。
-4. **检验**：已知的好案例如果没有通过，回头检查标准本身。
+An entry is included when it meets **at least one** of:
+- the building itself carries an idea of threshold;
+- its architect, or published writing on it, describes this transition explicitly;
+- the transition has a recognised cultural or ritual meaning;
 
-每一层都记录每一步的数量（类似 PRISMA 流程图）。
+and **both** of:
+- it has a clear sequence of open and enclosed spaces (open–enclosed–open or enclosed–open–enclosed);
+- at least one property (height, width, light, material) changes visibly between consecutive spaces, and this can be documented from drawings, published descriptions or site visits.
 
-## 4. 收录标准
+For the `cambridge-other` and `cambridgeshire` layers, candidates are found by taking every `amenity=place_of_worship` in OpenStreetMap within the area, then applying the criteria above.
 
-**意义层面**（满足其一）：
-- A. 建筑本身有 threshold 的概念；
-- B. 建筑师或文献明确提到这段过渡；
-- C. 文化上有 threshold 意义。
+## 4. One file per building
 
-**物理层面**（都要满足）：
-- 有清楚的 O-C-O 或 C-O-C 序列；
-- 至少一个 feature 在相邻路段之间有明显的 Δ，并且有资料可以支持。
+Each file in `_cases/` describes one building. A building can have several routes (`sequences`); each route is a list of spaces (`segments`) in the order they are walked.
 
-**分档**（`tier`）：
-- `A`：中间有 threshold，并且有平行的侧边路线；
-- `B`：两者有其一；
-- `C`：都没有，或待查。
+## 5. Codes
 
-## 5. 记录单位
-
-一个 md 文件 = 一座建筑。一座建筑里可以有多条序列（`sequences`），每条序列由若干路段（`segments`）组成。
-> 待定：collection 的单位最终用“建筑”还是“序列”。现在的字段两种都支持。
-
-## 6. 编号
-
-| layer | 前缀 | 例 |
+| layer | prefix | example |
 |---|---|---|
 | `college-chapel` | C | C01 |
 | `cambridge-other` | K | K01 |
 | `cambridgeshire` | E | E01 |
 
-编号一经分配不再改；条目被排除时，`status` 改为 `excluded`，不删文件。
+A code is never changed or reused.
 
-## 7. tag 词表
+## 6. Tags
 
-只用下面的词，新增要先写进这里。名称来自资料原文（RCHME、listing、学院资料）。
+Use only these words; add a new one here before using it. Names follow the sources (RCHME, listing descriptions, college publications).
 
-- 层：`college-chapel` `cambridge-other` `cambridgeshire`
-- 状态：`candidate` `shortlist` `excluded`
-- threshold 形式：`screen`（木或金属屏风）· `arch`（墙上的拱或门洞）· `vestibule`（屏风之间的小前厅）· `octagonal-ante-chapel` · `crossing`（塔楼下的交叉）· `ascent`（垂直上升）· `side-route`（平行的侧边路线）
+- `screen`: timber or metal screen
+- `arch`: arch or doorway in a wall
+- `vestibule`: small lobby between screens
+- `octagonal-ante-chapel`
+- `crossing`: crossing under a tower
+- `ascent`: vertical rise along the route
+- `side-route`: a parallel route beside the main one
 
-## 8. 字段
+## 7. Fields
 
-见 `_cases/C01-kings-college-chapel.md`。必填：`code` `name_en` `name_zh` `layer` `status` `tier` `tags` `lat` `lon` `coord_source` `sources`。
+See `_cases/C01-kings-college-chapel.md`.
 
-- 坐标用 OpenStreetMap（`osm` 填 OSM 对象，如 `way/123456`）；暂用其他来源时，在 `coord_source` 里写明。
-- 尺寸写原文单位，同时给出米（1 ft = 0.3048 m）。
-- 建造年代写在 `built`。**不要用 `date` 这个字段名**：GitHub Pages 会把它当成发布日期，写成年代范围会导致网站构建失败。
-- **不写个人邮箱**：仓库是公开的，联系方式只放学院官网链接。
+Required: `code` `name` `layer` `published` `lat` `lon` `coord_source` `sources`.
+Optional: `college` `built` `dimensions` `osm` `chapel_page` `cargo_url` `tags` `sequences` `images`.
 
-## 9. 图和来源
+- Coordinates come from OpenStreetMap (`osm` holds the OSM object, e.g. `way/123456`). If another source is used for now, say so in `coord_source`.
+- Give dimensions in the units of the source, followed by metres (1 ft = 0.3048 m).
+- Put the construction dates in `built`. **Do not use a field called `date`**: GitHub Pages reads it as a publication date and the site fails to build.
+- No personal email addresses: this repository is public. Link to the college's own page instead.
 
-- 每张图都要有：作者、年份、来源链接、许可证。没有许可信息的图不上网站。
-- Wikimedia Commons 的图按其许可证（如 CC BY-SA 4.0）署名。
-- RCHME（1959）图版：BHO 的再使用条款待核实，核实前只链接、不放图。
-- 自己拍的照片和 sketch：标“© Haining Ding”。
-- 图例（绘图规则）：粗实线 = 剖到的墙；细实线 = 看到的边；点划线 = 路线；T1、T2… = threshold 位置。
+## 8. Images and sources
 
-## 10. 怎样增删
+- Every image needs an author, year, source link and licence. Images without licence information are not used.
+- Wikimedia Commons images are credited according to their licence (e.g. CC BY-SA 4.0).
+- RCHME (1959) plates: British History Online's reuse terms are still to be checked, so these are linked, not shown.
+- Own photographs and sketches: "© Haining Ding".
+- Drawing legend: thick line = wall in section; thin line = edge in view; dash-dot line = route; T1, T2… = threshold positions.
 
-- **增加**：复制一个 `_cases/` 文件，改名为 `编号-名称.md`，填好字段，提交。地图会自动加上这个点。
-- **排除**：把 `status` 改成 `excluded`，在正文写理由。地图默认不显示 `excluded`。
-- **改规则**：改这份文件，并在下面的“修改记录”里写一行。
+## 9. Adding and removing entries
 
-## 修改记录
+- **Add**: copy a file in `_cases/`, rename it `code-name.md`, fill in the fields, set `published: true`, commit. The map adds the point automatically.
+- **Remove from the site**: set `published: false`. The file stays in the repository.
+- **Change these rules**: edit this file and add a line to the change log below.
 
-- 2026-10-25：第一版。
-- 2026-10-25：年代字段由 `date` 改为 `built`。
+## Change log
+
+- 2026-10-25: First version.
+- 2026-10-25: Construction-date field renamed from `date` to `built`.
+- 2026-10-25: English only; project-internal fields removed.
