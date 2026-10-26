@@ -6,12 +6,13 @@ published: true
 tags: [screen, side-route]
 college: King's College
 built: "1446–1515; screen 1533–36"
-lat: 52.2048
-lon: 0.1165
-coord_source: "Wikipedia (temporary; to be replaced by OSM)"
-osm: ""
+lat: 52.20478
+lon: 0.116544
+coord_source: "OpenStreetMap"
+osm: "way/164848633"
+osm_site: "way/164848644"
 chapel_page: "https://www.kings.cam.ac.uk/chapel"
-cargo_url: "https://373067.cargo.site/c01-king%27s-college-chapel"
+cargo_url: "https://373067.cargo.site/king%27s-college-chapel"
 dimensions: "289 × 76½ ft (88.1 × 23.3 m) incl. ante-chapel; vault 80 ft (24.4 m); 12 bays"
 sequences:
   - id: central
