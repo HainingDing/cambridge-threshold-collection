@@ -58,9 +58,9 @@ Use only these words; add a new one here before using it. Names follow the sourc
 See `_cases/C01-kings-college-chapel.md`.
 
 Required: `code` `name` `layer` `published` `lat` `lon` `coord_source` `sources`.
-Optional: `college` `built` `dimensions` `osm` `chapel_page` `cargo_url` `tags` `sequences` `images`.
+Optional: `college` `built` `dimensions` `osm` `osm_site` `chapel_page` `cargo_url` `tags` `sequences` `images`.
 
-- Coordinates come from OpenStreetMap (`osm` holds the OSM object, e.g. `way/123456`). If another source is used for now, say so in `coord_source`.
+- Coordinates come from OpenStreetMap (`osm` holds the OSM object, e.g. `way/123456`; `osm_site` holds the college or site boundary). If another source is used for now, say so in `coord_source`.
 - Give dimensions in the units of the source, followed by metres (1 ft = 0.3048 m).
 - Put the construction dates in `built`. **Do not use a field called `date`**: GitHub Pages reads it as a publication date and the site fails to build.
 - No personal email addresses: this repository is public. Link to the college's own page instead.
@@ -71,6 +71,7 @@ Optional: `college` `built` `dimensions` `osm` `chapel_page` `cargo_url` `tags` 
 - Wikimedia Commons images are credited according to their licence (e.g. CC BY-SA 4.0).
 - RCHME (1959) plates: British History Online's reuse terms are still to be checked, so these are linked, not shown.
 - Own photographs and sketches: "© Haining Ding".
+- Site plans are drawn from OpenStreetMap with `tools/siteplan.js` (building black, college buildings mid grey, context light grey, site boundary dashed) and credited "© OpenStreetMap contributors (ODbL)".
 - Drawing legend: thick line = wall in section; thin line = edge in view; dash-dot line = route; T1, T2… = threshold positions.
 
 ## 9. Adding and removing entries
@@ -84,3 +85,4 @@ Optional: `college` `built` `dimensions` `osm` `chapel_page` `cargo_url` `tags` 
 - 2026-10-25: First version.
 - 2026-10-25: Construction-date field renamed from `date` to `built`.
 - 2026-10-25: English only; project-internal fields removed.
+- 2026-10-26: Added C02–C23 and K01–K10 (OSM coordinates, site plans, Commons images); `osm_site` field added. Tags and routes for these entries are still to be filled in.
