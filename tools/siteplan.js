@@ -8,10 +8,11 @@ window.__nomi = async (q) => {
   const r = await fetch('https://nominatim.openstreetmap.org/search?format=jsonv2&polygon_geojson=1&limit=5&q=' + encodeURIComponent(q), { signal: ctl.signal });
   return r.json();
 };
-window.__siteplan = async ({ building, site, pad = 0.15, W = 2000, H = 1400 }) => {
+window.__siteplan = async ({ building, site, pad = 0.15, W = 2000, H = 1400, frame = null }) => {
+  // frame: optional [[lon,lat],...] points that set the drawing extent (e.g. to zoom in on a large site)
   const rings = (g) => g.type === 'Polygon' ? [g.coordinates[0]] : g.type === 'MultiPolygon' ? g.coordinates.map(p => p[0]) : [];
   const bRings = rings(building), sRings = site ? rings(site) : [];
-  const all = [...bRings, ...sRings].flat();
+  const all = frame || [...bRings, ...sRings].flat();
   let minLon = Math.min(...all.map(p => p[0])), maxLon = Math.max(...all.map(p => p[0]));
   let minLat = Math.min(...all.map(p => p[1])), maxLat = Math.max(...all.map(p => p[1]));
   const lat0 = (minLat + maxLat) / 2, lon0 = (minLon + maxLon) / 2;
