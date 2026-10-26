@@ -64,6 +64,7 @@ Optional: `college` `built` `dimensions` `osm` `osm_site` `chapel_page` `cargo_u
 - Give dimensions in the units of the source, followed by metres (1 ft = 0.3048 m).
 - Put the construction dates in `built`. **Do not use a field called `date`**: GitHub Pages reads it as a publication date and the site fails to build.
 - No personal email addresses: this repository is public. Link to the college's own page instead.
+- `images` lists every image shown on the entry's page. Each item has `view` (one of `context`, `plan`, `section`, `axo`, `photos` — the five tabs on the page), `caption`, `author`, `license` and `url`. The full working list, with the Cargo media hashes, is `data/manifest.json`; `tools/update_case_images.py` rewrites the `images` blocks from it.
 
 ## 8. Images and sources
 
@@ -72,6 +73,7 @@ Optional: `college` `built` `dimensions` `osm` `osm_site` `chapel_page` `cargo_u
 - RCHME (1959) plates: British History Online's reuse terms are still to be checked, so these are linked, not shown.
 - Own photographs and sketches: "© Haining Ding".
 - Site plans are drawn from OpenStreetMap with `tools/siteplan.js` (building black, college buildings mid grey, context light grey, site boundary dashed) and credited "© OpenStreetMap contributors (ODbL)".
+- Historical drawings: Willis & Clark, *The Architectural History of the University of Cambridge* (1886), Atkinson & Clark, *Cambridge Described and Illustrated* (1897), Loggan (1690), Britton (1807), Le Keux (c. 1840) — all public domain, taken from the scans on Wikimedia Commons / Internet Archive.
 - Drawing legend: thick line = wall in section; thin line = edge in view; dash-dot line = route; T1, T2… = threshold positions.
 
 ## 9. Adding and removing entries
@@ -86,3 +88,4 @@ Optional: `college` `built` `dimensions` `osm` `osm_site` `chapel_page` `cargo_u
 - 2026-10-25: Construction-date field renamed from `date` to `built`.
 - 2026-10-25: English only; project-internal fields removed.
 - 2026-10-26: Added C02–C23 and K01–K10 (OSM coordinates, site plans, Commons images); `osm_site` field added. Tags and routes for these entries are still to be filled in.
+- 2026-10-26: Pages reorganised into five views (Context, Plan, Section, Axonometric, Photographs); `images` items gain a `view` field; plans, sections and historical views added from Willis & Clark (1886), Atkinson & Clark (1897), Britton (1807) and others.
