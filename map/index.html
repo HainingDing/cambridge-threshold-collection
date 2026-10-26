@@ -6,23 +6,29 @@
 <title>Map · Cambridge Threshold Collection</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
-  :root { --fg:#111; --muted:#777; --bg:#fff; }
-  html, body { height:100%; margin:0; background:var(--bg); color:var(--fg);
+  :root { --fg:#222; --muted:#888; --bg:#fff; }
+  html, body { height:100%; margin:0; background:#f2f2f0; color:var(--fg);
     font:13px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  #map { position:absolute; inset:0; }
-  .leaflet-tile-pane { filter:grayscale(1) contrast(.9) brightness(1.05); }
-  .panel { position:absolute; top:12px; left:12px; z-index:500; background:var(--bg);
-    border:1px solid var(--fg); padding:10px 12px; max-width:240px; }
-  .panel h1 { font-size:13px; font-weight:600; margin:0 0 6px; letter-spacing:.02em; }
-  .panel label { display:block; cursor:pointer; margin:2px 0; }
-  .panel .n { color:var(--muted); font-variant-numeric:tabular-nums; }
-  .pin { width:10px; height:10px; background:var(--fg); border:1px solid var(--bg); cursor:pointer; }
-  .code { font-size:11px; font-weight:600; background:none; border:none; box-shadow:none; padding:0; }
-  .code::before { display:none; }
-  .leaflet-popup-content-wrapper, .leaflet-popup-tip { border-radius:0; box-shadow:none; border:1px solid var(--fg); }
-  .leaflet-popup-content { margin:10px 12px; }
-  .leaflet-popup-content b { display:block; }
-  .leaflet-popup-content a { color:var(--fg); }
+  #map { position:absolute; inset:0; background:#f2f2f0; }
+  .leaflet-tile-pane { filter:grayscale(1) contrast(.85) brightness(1.08); opacity:.85; }
+  .panel { position:absolute; top:14px; left:14px; z-index:500; background:rgba(255,255,255,.92);
+    border-radius:12px; padding:12px 14px; max-width:250px; box-shadow:0 2px 14px rgba(0,0,0,.08); backdrop-filter:blur(4px); }
+  .panel h1 { font-size:13px; font-weight:600; margin:0 0 8px; letter-spacing:.02em; }
+  .panel label { display:flex; align-items:center; gap:7px; cursor:pointer; margin:4px 0; }
+  .panel input { margin:0; accent-color:#555; }
+  .panel .n { color:var(--muted); font-variant-numeric:tabular-nums; margin-left:auto; padding-left:8px; }
+  .swatch { display:inline-flex; gap:2px; }
+  .swatch i { width:9px; height:9px; border-radius:50%; display:block; }
+  .dot { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-size:9.5px; font-weight:700; letter-spacing:.02em; color:#fff; cursor:pointer;
+    box-shadow:0 1px 4px rgba(0,0,0,.18); transition:transform .15s ease, box-shadow .15s ease; }
+  .dot.ring { background:#fff !important; border:2.5px solid currentColor; width:23px; height:23px; }
+  .dot:hover { transform:scale(1.25); box-shadow:0 3px 10px rgba(0,0,0,.25); }
+  .leaflet-marker-icon:hover { z-index:10000 !important; }
+  .name { font-size:12px; font-weight:500; border:none; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,.12); padding:4px 8px; }
+  .name::before { display:none; }
+  .leaflet-control-zoom a { border-radius:8px !important; }
+  .leaflet-control-zoom { border:none !important; box-shadow:0 2px 10px rgba(0,0,0,.1) !important; border-radius:8px; }
 </style>
 </head>
 <body>
@@ -38,6 +44,10 @@ const LAYERS = {
   "cambridge-other": "Other religious buildings, Cambridge",
   "cambridgeshire":  "Cambridgeshire"
 };
+// Colleges: a full spectrum of saturated colours; other buildings: deeper tones, drawn as rings
+const PALETTE = ['#e4572e','#f3a712','#29b6a4','#4e79d6','#a55eea','#e8559b','#58b947','#ff7f50','#3fa7d6','#c0392b',
+  '#8e6cd8','#16a085','#f06292','#d4a017','#2e86de','#ef6c00','#6ab04c','#9b59b6','#00a8a8','#e84393','#5f7de0','#ff9f1a','#26a65b'];
+const DEEP = ['#b23a48','#1d6f8c','#7b4fa0','#2d8659','#c26a1b','#3949ab','#a83279','#00796b','#8d6e2f','#5c6bc0'];
 const map = L.map('map', { zoomControl:false }).setView([52.2053, 0.1218], 15);
 L.control.zoom({ position:'topright' }).addTo(map);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -47,27 +57,32 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 const groups = {};
 Object.keys(LAYERS).forEach(k => groups[k] = L.layerGroup().addTo(map));
+const colorFor = (code) => {
+  const n = parseInt(code.slice(1), 10) - 1;
+  return code[0] === 'C' ? PALETTE[n % PALETTE.length] : DEEP[n % DEEP.length];
+};
 
 fetch('../places.geojson', { cache:'no-cache' }).then(r => r.json()).then(data => {
-  const counts = {};
+  const counts = {}, sw = {};
   data.features.forEach(f => {
     const p = f.properties, [lon, lat] = f.geometry.coordinates;
-    const m = L.marker([lat, lon], { title: `${p.code} · ${p.name}`, icon: L.divIcon({ className:'', html:'<div class="pin"></div>', iconSize:[10,10] }) });
-    if (p.cargo_url) {
-      m.on('click', () => { window.open(p.cargo_url, '_top'); });
-    } else {
-      m.bindPopup(`<b>${p.code} · ${p.name}</b>`);
-    }
-    m.bindTooltip(p.code, { permanent:true, direction:'right', offset:[6,0], className:'code' });
+    const c = colorFor(p.code), ring = p.code[0] !== 'C';
+    const html = `<div class="dot${ring ? ' ring' : ''}" style="background:${c};color:${ring ? c : '#fff'}">${p.code}</div>`;
+    const m = L.marker([lat, lon], { title: `${p.code} · ${p.name}`, riseOnHover:true,
+      icon: L.divIcon({ className:'', html, iconSize:[28,28], iconAnchor:[14,14] }) });
+    if (p.cargo_url) m.on('click', () => { window.open(p.cargo_url, '_top'); });
+    m.bindTooltip(p.name, { direction:'top', offset:[0,-14], className:'name' });
     (groups[p.layer] || groups['college-chapel']).addLayer(m);
     counts[p.layer] = (counts[p.layer] || 0) + 1;
+    (sw[p.layer] = sw[p.layer] || []).push(c);
   });
   const box = document.getElementById('layers');
   Object.entries(LAYERS).forEach(([k, label]) => {
     if (!counts[k]) return;
     const id = 'layer-' + k;
+    const dots = sw[k].slice(0, 4).map(c => `<i style="background:${c}"></i>`).join('');
     box.insertAdjacentHTML('beforeend',
-      `<label><input type="checkbox" id="${id}" checked> ${label} <span class="n">${counts[k]}</span></label>`);
+      `<label><input type="checkbox" id="${id}" checked><span class="swatch">${dots}</span> ${label} <span class="n">${counts[k]}</span></label>`);
     document.getElementById(id).addEventListener('change', e =>
       e.target.checked ? groups[k].addTo(map) : map.removeLayer(groups[k]));
   });
