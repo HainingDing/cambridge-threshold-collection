@@ -1,0 +1,270 @@
+{
+"C02": {
+"name": "Christ's College Chapel",
+"college": "Christ's College",
+"built": "early 16th century",
+"building": "Part of the original early 16th-century buildings of First Court, with the Great Gate and the Master's Lodge.",
+"location": "First Court.",
+"wiki": "Christ's_College,_Cambridge"
+},
+"C03": {
+"name": "Churchill College Chapel",
+"college": "Churchill College",
+"built": "1960s",
+"building": "Built after a long debate over whether the college should have a chapel at all, settled by Lord Beaumont of Whitley's gift in 1960. Grade II listed (1993).",
+"location": "At the far end of the college grounds, away from the main buildings.",
+"wiki": "Churchill_College,_Cambridge"
+},
+"C04": {
+"name": "Clare College Chapel",
+"college": "Clare College",
+"built": "1763",
+"building": "Built in 1763 to the design of Sir James Burrough, Master of Gonville and Caius College.",
+"location": "Between Old Court and Trinity Lane.",
+"wiki": "Clare_College,_Cambridge"
+},
+"C05": {
+"name": "Corpus Christi College Chapel",
+"college": "Corpus Christi College",
+"built": "1823–27",
+"building": "The college's third chapel, completed in 1827 with New Court to the design of William Wilkins, who is buried in its vaults. Until 1579 the neighbouring St Bene't's Church served as the college chapel.",
+"location": "At the centre of New Court, opposite the gate.",
+"wiki": "Corpus_Christi_College,_Cambridge"
+},
+"C06": {
+"name": "Downing College Chapel",
+"college": "Downing College",
+"built": "1951–53",
+"building": "Completed the third side of Main Court in 1951–53, more than a century after the first ranges were built.",
+"location": "North side of Main Court.",
+"wiki": "Downing_College,_Cambridge"
+},
+"C07": {
+"name": "Emmanuel College Chapel",
+"college": "Emmanuel College",
+"built": "1677",
+"building": "Designed by Christopher Wren (1677), one of his three buildings in Cambridge. The chapel stands behind an arcaded gallery that closes the east side of Front Court.",
+"location": "East side of Front Court.",
+"wiki": "Emmanuel_College,_Cambridge"
+},
+"C08": {
+"name": "Fitzwilliam College Chapel",
+"college": "Fitzwilliam College",
+"built": "1991",
+"building": "Added in 1991 at the end of the north wing of New Court. Grade II listed (2024).",
+"location": "End of the north wing of New Court.",
+"wiki": "Fitzwilliam_College,_Cambridge"
+},
+"C09": {
+"name": "Girton College Chapel",
+"college": "Girton College",
+"built": "1899–1902",
+"building": "Designed by Alfred and Paul Waterhouse; completed in 1901 and inaugurated in 1902.",
+"location": "Within the main college buildings.",
+"wiki": "Girton_College,_Cambridge"
+},
+"C10": {
+"name": "Gonville and Caius College Chapel",
+"college": "Gonville and Caius College",
+"built": "1393",
+"building": "Added in 1393; the oldest purpose-built college chapel in continuous use in Oxford or Cambridge. Part of the Grade I listed buildings around Gonville Court and Caius Court.",
+"location": "Between Gonville Court and Caius Court.",
+"wiki": "Gonville_and_Caius_College,_Cambridge"
+},
+"C11": {
+"name": "Jesus College Chapel",
+"college": "Jesus College",
+"built": "1157–1245",
+"building": "Begun in 1157 as the church of the nunnery of St Radegund and completed by 1245; the oldest university building in Cambridge still in use.",
+"location": "Off Cloister Court.",
+"wiki": "Jesus_College,_Cambridge"
+},
+"C12": {
+"name": "Magdalene College Chapel",
+"college": "Magdalene College",
+"built": "1470–72",
+"building": "Built in 1470–72, the first building of the college. A new organ by Goetze & Gwynn was installed in 2000.",
+"location": "North range of First Court.",
+"wiki": "Magdalene_College,_Cambridge"
+},
+"C13": {
+"name": "Pembroke College Chapel",
+"college": "Pembroke College",
+"built": "1663–65",
+"building": "Christopher Wren's first building, consecrated in 1665; extended to the east by George Gilbert Scott in 1880. The college's first chapel (1355) is now the Old Library.",
+"location": "On Trumpington Street, on the west side of the college.",
+"wiki": "Pembroke_College,_Cambridge"
+},
+"C14": {
+"name": "Peterhouse Chapel",
+"college": "Peterhouse",
+"built": "1628–32",
+"building": "Built from 1628 under the Master Matthew Wren and consecrated in 1632. It stands between open cloisters on the east side of Old Court.",
+"location": "East side of Old Court, between open cloisters.",
+"wiki": "Peterhouse,_Cambridge"
+},
+"C15": {
+"name": "Queens' College Chapel",
+"college": "Queens' College",
+"built": "1888–91",
+"building": "Designed by G. F. Bodley in 1886 and consecrated in 1891. The college's first chapel (licensed by 1460) is in Old Court.",
+"location": "Walnut Tree Court.",
+"wiki": "Queens'_College,_Cambridge"
+},
+"C16": {
+"name": "Robinson College Chapel",
+"college": "Robinson College",
+"built": "1980",
+"building": "Built as an integral part of the main college building. A bronze screen by Jacqueline Stieger separates the ante-chapel from the chapel, with a Frobenius organ in the gallery above the ante-chapel; the windows are by John Piper and Patrick Reyntiens.",
+"location": "Within the main college building.",
+"wiki": "Robinson_College,_Cambridge"
+},
+"C17": {
+"name": "St Catharine's College Chapel",
+"college": "St Catharine's College",
+"built": "1694–1704",
+"building": "Built 1694–97, fitted out by 1703 and consecrated in 1704; Robert Grumbold was paid for surveying and the masonry. A screen with a central round-headed arch separates the ante-chapel from the chapel, with the organ gallery above (RCHME).",
+"location": "East end of the north range of Main Court.",
+"wiki": "St_Catharine's_College,_Cambridge",
+"extra_sources": [
+[
+"RCHME, An Inventory of the Historical Monuments in the City of Cambridge (1959): St Catharine's College",
+"https://prod.british-history.ac.uk/node/108028"
+]
+]
+},
+"C18": {
+"name": "St Edmund's College Chapel",
+"college": "St Edmund's College",
+"built": "1916",
+"building": "Designed by Benedict Williamson and consecrated in 1916; a Catholic foundation. Grade II listed.",
+"location": "",
+"wiki": "St_Edmund's_College,_Cambridge"
+},
+"C19": {
+"name": "St John's College Chapel",
+"college": "St John's College",
+"built": "1863–69",
+"building": "Designed by Sir George Gilbert Scott; begun in 1863 and consecrated in 1869, replacing the medieval chapel. A wide ante-chapel spans the west end.",
+"location": "North side of First Court.",
+"wiki": "St_John's_College_Chapel,_Cambridge",
+"extra_sources": [
+[
+"Gilbert Scott: St John's College Chapel",
+"https://gilbertscott.org/buildings/st-johns-college-chapel-university-of-cambridge"
+]
+]
+},
+"C20": {
+"name": "Selwyn College Chapel",
+"college": "Selwyn College",
+"built": "1895",
+"building": "Built in 1895, before the dining hall, as part of Old Court (largely designed by Sir Arthur Blomfield).",
+"location": "Old Court.",
+"wiki": "Selwyn_College,_Cambridge"
+},
+"C21": {
+"name": "Sidney Sussex College Chapel",
+"college": "Sidney Sussex College",
+"built": "1770s; rebuilt 1920s",
+"building": "Rebuilt and enlarged in the early 20th century by T. H. Lyon, with a carved interior in late 17th-century style, replacing James Essex's small chapel of the 1770s; completed in 1923.",
+"location": "Chapel Court.",
+"wiki": "Sidney_Sussex_College,_Cambridge"
+},
+"C22": {
+"name": "Trinity College Chapel",
+"college": "Trinity College",
+"built": "1554–67",
+"building": "Begun in 1554–55 under Mary I and completed in 1567 under Elizabeth I, in Tudor Gothic. Restored by Edward Blore in 1832; Arthur Blomfield added the vestry, choir room and porch in 1868–73. Grade I listed.",
+"location": "North side of Great Court.",
+"wiki": "Trinity_College_Chapel,_Cambridge"
+},
+"C23": {
+"name": "Trinity Hall Chapel",
+"college": "Trinity Hall",
+"built": "1352–66",
+"building": "Licensed in 1352 and built by 1366; refitted in 1729–30, when graves were moved to the ante-chapel, and extended to the east in 1864.",
+"location": "Front Court.",
+"wiki": "Trinity_Hall,_Cambridge"
+},
+"K01": {
+"name": "Great St Mary's, the University Church",
+"college": "",
+"built": "rebuilt after 1290; late 15th–early 16th century",
+"building": "The University Church. Mostly destroyed by fire in 1290 and rebuilt; the present church is largely late medieval. Grade I listed.",
+"location": "On King's Parade at Market Hill, opposite the Senate House.",
+"wiki": "Church_of_St_Mary_the_Great,_Cambridge"
+},
+"K02": {
+"name": "Cambridge Central Mosque",
+"college": "",
+"built": "2019",
+"building": "The first purpose-built mosque in Cambridge, designed by Marks Barfield Architects with Keith Critchlow and the garden designer Emma Clark, after a competition in 2009. It draws on both Islamic and English religious architecture.",
+"location": "On Mill Road.",
+"wiki": "Cambridge_Central_Mosque"
+},
+"K03": {
+"name": "The Round Church (Holy Sepulchre)",
+"college": "",
+"built": "c. 1130",
+"building": "Built around 1130, its round nave modelled on the rotunda of the Church of the Holy Sepulchre in Jerusalem. Grade I listed.",
+"location": "At the corner of Bridge Street and Round Church Street.",
+"wiki": "Church_of_the_Holy_Sepulchre,_Cambridge"
+},
+"K04": {
+"name": "St Bene't's Church",
+"college": "",
+"built": "c. 1000–1050; c. 1300",
+"building": "The Anglo-Saxon tower was most probably built between 1000 and 1050; the nave arcade dates from a rebuilding of about 1300. It served as the chapel of Corpus Christi College until 1579.",
+"location": "On Bene't Street, next to Corpus Christi College.",
+"wiki": "St_Bene't's_Church"
+},
+"K05": {
+"name": "Little St Mary's",
+"college": "",
+"built": "1352",
+"building": "Rebuilt in 1352 as both the chapel of Peterhouse and a parish church; it reverted to being a parish church when Peterhouse built its own chapel in 1632.",
+"location": "On Trumpington Street, next to Peterhouse.",
+"wiki": "Little_St_Mary's,_Cambridge"
+},
+"K06": {
+"name": "Our Lady and the English Martyrs",
+"college": "",
+"built": "1885–90",
+"building": "A large Gothic Revival church by Dunn and Hansom, built 1885–90. Grade I listed.",
+"location": "At the corner of Hills Road and Lensfield Road.",
+"wiki": "Our_Lady_and_the_English_Martyrs_Church"
+},
+"K07": {
+"name": "St Edward King and Martyr",
+"college": "",
+"built": "c. 1400",
+"building": "Rebuilt around 1400; the arch at the base of the tower survives from the earlier church. Two 15th-century side chapels served Trinity Hall (north) and Clare (south).",
+"location": "In St Edward's Passage, off King's Parade.",
+"wiki": "St_Edward_King_and_Martyr,_Cambridge"
+},
+"K08": {
+"name": "St Botolph's Church",
+"college": "",
+"built": "14th century",
+"building": "Built beside the long-demolished south gate of medieval Cambridge; mostly 14th century, with a 15th-century tower. Grade I listed.",
+"location": "On Trumpington Street at Botolph Lane, where the town's south gate stood.",
+"wiki": "St_Botolph's_Church,_Cambridge"
+},
+"K09": {
+"name": "All Saints' Church, Jesus Lane",
+"college": "",
+"built": "1863–70",
+"building": "Designed by G. F. Bodley and built in stages between 1863 and 1870, in Gothic Revival style. Grade I listed; cared for by the Churches Conservation Trust since 1981.",
+"location": "On Jesus Lane, opposite Jesus College.",
+"wiki": "All_Saints'_Church,_Cambridge"
+},
+"K10": {
+"name": "Leper Chapel of St Mary Magdalene",
+"college": "",
+"built": "c. 1125",
+"building": "Built about 1125 as the chapel of a leper hospital; most of the chapel was rebuilt in the 13th century, but parts of the east wall are original.",
+"location": "On Newmarket Road, near Stourbridge Common.",
+"wiki": "Leper_Chapel,_Cambridge"
+}
+}
