@@ -15,7 +15,9 @@ cargo_url: "https://373067.cargo.site/girton-college-chapel"
 sources:
   - {title: "Wikipedia: Girton College, Cambridge", url: "https://en.wikipedia.org/wiki/Girton_College%2C_Cambridge"}
 images:
-  - {caption: "Girton College", author: "Vysotsky", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Girton_College,_Cambridge_university_002.jpg"}
+  - {view: context, caption: "Site plan; chapel in black, college boundary dashed", author: "Drawn from OpenStreetMap data, © OpenStreetMap contributors", license: "ODbL", url: "https://www.openstreetmap.org/copyright"}
+  - {view: photos, caption: "Chapel window", author: "Quintus Lollius Urbicus", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Girton_College_Chapel_Window.jpg"}
+  - {view: photos, caption: "Girton College", author: "Vysotsky", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Girton_College,_Cambridge_university_002.jpg"}
 ---
 
 Designed by Alfred and Paul Waterhouse; completed in 1901 and inaugurated in 1902.
